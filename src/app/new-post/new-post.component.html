@@ -1,1 +1,14 @@
-<p>new-post works!</p>
+<div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+        <h2> New Post </h2>
+        <form [formGroup]="postForm" (ngSubmit)="onSavePost()">
+            <div class="form-group">
+                <label for="postContent">Enter your text here</label>
+                <input class="form-control" type="text" id="postContent" formControlName="postContent">
+            </div>
+            <button class="defaultButton" type="submit" [disabled]="postForm.invalid">
+                Save
+            </button>
+        </form>
+    </div>
+</div>

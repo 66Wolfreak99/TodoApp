@@ -18,3 +18,8 @@ body{
     margin-bottom: auto;
 }
 
+.defaultButton{
+    border-radius: 6px;
+    border: solid 2px rgb(216, 216, 216);
+    background-color: rgb(209, 189, 228);
+}

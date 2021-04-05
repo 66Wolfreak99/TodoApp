@@ -1,1 +1,16 @@
-<p>post-list works!</p>
+<div class="row">
+    <div class="col-xs-6">
+        <div class="list-group">
+            
+            <div class="list-group-item" *ngFor="let post of posts">
+                <div>
+                    <button class="defaultButton pull-right" (click)="onDeletePost(post)">
+                        <span class="glyphicon glyphicon-minus"></span>
+                    </button>
+                </div>
+                <h3>{{post.postContent}}</h3>
+            </div>
+        </div>
+        
+    </div>
+</div>
