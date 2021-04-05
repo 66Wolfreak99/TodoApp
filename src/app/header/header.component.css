@@ -1,3 +1,12 @@
 .header{
-    background-color: rgb(193, 164, 221);
+    background: linear-gradient(0deg, #802e1a, #d88327);
+    border-top: solid 2px #fdb887;
+    border-bottom: solid 2px #4e1d0d;
+    color: white;
+}
+
+.header h1{
+    font-weight: 900;
+    line-height: 39px;
+    text-shadow: -3px -2px #4d250e;
 }

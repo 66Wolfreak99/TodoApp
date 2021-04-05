@@ -6,7 +6,7 @@
 }
 
 body{
-    background: rgb(165, 152, 177);
+    background: rgb(122 53 30);
 }
 
 .center{
@@ -19,7 +19,24 @@ body{
 }
 
 .defaultButton{
-    border-radius: 6px;
-    border: solid 2px rgb(216, 216, 216);
-    background-color: rgb(209, 189, 228);
+    border-radius: 3px;
+    border: none 2px rgb(216 216 216);
+    background-color: rgb(255 219 95);
+    font-weight: 600;
+    transition: all 0.5s ease-in-out;
+}
+
+.defaultButton:disabled{
+    background-color: #92442a;
+    transition: all 0.5s ease-in-out;
+    color: #5b2a1a;
+    cursor: not-allowed;
+    
+    
+
+    
+}
+
+.textColor{
+    color: white;
 }

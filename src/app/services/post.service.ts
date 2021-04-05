@@ -15,6 +15,8 @@ export class PostService {
   posts: Post[] = [];
   postsSubject = new Subject<Post[]>();
 
+  createPost: boolean = false;
+
   emitPost(){
     this.postsSubject.next(this.posts)
   }

@@ -1,12 +1,12 @@
-<div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
-        <h2> New Post </h2>
+<div class="col-xs-6 ">
+    <div class="container newPost">
+        <h2 class="textColor"> New Post </h2>
         <form [formGroup]="postForm" (ngSubmit)="onSavePost()">
             <div class="form-group">
-                <label for="postContent">Enter your text here</label>
-                <input class="form-control" type="text" id="postContent" formControlName="postContent">
+                <label class="textColor" for="postContent">Enter your text here</label>
+                <input class="form-control" type="text" id="postContent" #postContent formControlName="postContent">
             </div>
-            <button class="defaultButton" type="submit" [disabled]="postForm.invalid">
+            <button class="defaultButton" type="submit" [disabled]="postForm.invalid"  >
                 Save
             </button>
         </form>

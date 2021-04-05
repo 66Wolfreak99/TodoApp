@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private postService: PostService) { }
 
   ngOnInit(): void {
   }
-
+  onNewPost(){
+   // this.router.navigate(['/new'])
+   this.postService.createPost = true
+  }
 }

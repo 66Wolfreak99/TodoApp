@@ -13,6 +13,7 @@ export class PostListComponent implements OnInit, OnDestroy {
 
   posts:Post[];
   postSubscription: Subscription;
+  createPost = this.postService.createPost
 
   constructor(private postService: PostService, private router: Router) { }
 
