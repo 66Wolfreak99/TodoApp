@@ -6,7 +6,7 @@
 }
 
 body{
-    background: rgb(122 53 30);
+    background: rgb(208 208 208);
 }
 
 .center{
@@ -18,23 +18,31 @@ body{
     margin-bottom: auto;
 }
 
+
 .defaultButton{
     border-radius: 3px;
     border: none 2px rgb(216 216 216);
-    background-color: rgb(255 219 95);
+    background: linear-gradient(0deg, #9e7b44, #ffffff);
     font-weight: 600;
-    transition: all 0.5s ease-in-out;
+    border: solid 1px #743f00;
+    text-shadow: #ffffff75 1px 1px;
 }
 
 .defaultButton:disabled{
-    background-color: #92442a;
-    transition: all 0.5s ease-in-out;
-    color: #5b2a1a;
+    background: #86685e;
+    color: #4c3f3b;
     cursor: not-allowed;
     
-    
+}
 
-    
+.defaultButton:hover{
+    background: linear-gradient(0deg, #916d34, #cccccc);
+    transition: background 0.2s ease-in;
+}
+
+.defaultButton:active{
+    background: linear-gradient(180deg, #866840, #ffe9d3);
+    box-shadow: inset 0px 6px 6px rgba(104, 48, 10, 0.144);
 }
 
 .textColor{

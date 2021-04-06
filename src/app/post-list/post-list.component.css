@@ -15,14 +15,20 @@
 
 
 .postItem:hover {
-    box-shadow: 0px 0px 13px #00000052, inset 0px 3px #ffffff82, inset 0px -3px #0000004f;
-    background: #9494946b;
+    box-shadow: 0px 0px 13px #00000000, inset 0px 3px #0e070469, inset 0px -3px #ffdec55e;
+    background: #3b3b3b6b;
+
 }
 
 .postList{
     background: #5c5c5c;
     padding: 4px;
-    border: solid;
+    border: solid 2px black;
     border-radius: 9px;
+    box-shadow: inset 0px 2px #fffcc054, inset 0px -2px #20100b5c;
     
+}
+
+.delete.svg:hover{
+    fill: crimson;
 }
