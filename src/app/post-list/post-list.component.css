@@ -26,7 +26,12 @@
     border: solid 2px black;
     border-radius: 9px;
     box-shadow: inset 0px 2px #fffcc054, inset 0px -2px #20100b5c;
+    cursor: grab;
     
+}
+
+.postList:active{
+    cursor: grabbing;
 }
 
 .delete.svg:hover{
@@ -53,4 +58,9 @@
     fill: transparent;
     box-shadow: none !important;
     background: #2929296b !important;
+    cursor: grabbing;
+}
+
+.cdk-drag-placeholder svg{
+    display: none;
 }
