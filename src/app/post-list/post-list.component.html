@@ -3,7 +3,9 @@
     <div class="col-md-8">
         <div class="list-group postList">
             
-            <div class="row postItem " *ngFor="let post of posts">
+            <div cdkDropList (cdkDropListDropped)="drop($event)">
+            <div class="row postItem " *ngFor="let post of posts" cdkDrag>
+
                 <div class="col col-10">
                     <h5>{{post.postContent}}</h5>
                 </div>
@@ -16,6 +18,7 @@
                 </div>
                 
                 
+            </div>
             </div>
         </div>
         

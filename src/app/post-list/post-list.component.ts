@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Post } from '../models/post.model';
 import { PostService } from '../services/post.service';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-post-list',
@@ -16,6 +17,11 @@ export class PostListComponent implements OnInit, OnDestroy {
   createPost = this.postService.createPost
 
   constructor(private postService: PostService, private router: Router) { }
+
+  drop(event: CdkDragDrop<Post[]>) {
+    moveItemInArray(this.posts, event.previousIndex, event.currentIndex);
+    this.postService.savePosts();
+    }
 
   ngOnInit(): void {
     this.postSubscription = this.postService.postsSubject.subscribe(

@@ -10,6 +10,8 @@ import { PostListItemComponent } from './post-list-item/post-list-item.component
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostService } from './services/post.service';
 import { RouterModule, Routes } from '@angular/router';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { DragDropModule } from '@angular/cdk/drag-drop'
 
 const appRoutes: Routes = [
   {path: 'posts', component: PostListComponent},
@@ -34,6 +36,8 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
+    NoopAnimationsModule,
+    DragDropModule
   ],
   providers: [
     PostService,
