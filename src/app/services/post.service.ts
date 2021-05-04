@@ -15,7 +15,8 @@ export class PostService {
 
   posts: Post[] = [];
   postsSubject = new Subject<Post[]>();
-  postCookie: any
+  postCookie: any;
+  cookieExists: boolean 
 
   createPost: boolean = false;
 
@@ -36,7 +37,14 @@ export class PostService {
         this.posts = data.val() ? data.val() : [];
         this.emitPost()
     })*/
-   this.posts = JSON.parse(this.cookieService.get('Posts'));
+ 
+  this.cookieExists = this.cookieService.check('Posts');
+  if(this.cookieExists){
+    this.posts = JSON.parse(this.cookieService.get('Posts'));
+  }else{
+    this.cookieService.set( 'Posts', '' );
+  }
+   
   }
 
   createNewPost(newPost: Post){
