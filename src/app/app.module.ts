@@ -11,7 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostService } from './services/post.service';
 import { RouterModule, Routes } from '@angular/router';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { DragDropModule } from '@angular/cdk/drag-drop'
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { CookieService } from 'ngx-cookie-service';
 
 const appRoutes: Routes = [
   {path: 'posts', component: PostListComponent},
@@ -40,7 +41,7 @@ const appRoutes: Routes = [
     DragDropModule
   ],
   providers: [
-    PostService,
+    PostService, CookieService
   ],
   bootstrap: [AppComponent]
 })

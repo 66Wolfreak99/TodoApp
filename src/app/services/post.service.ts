@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Post } from '../models/post.model';
+import { CookieService } from 'ngx-cookie-service';
 import firebase from 'firebase'
 
 @Injectable({
@@ -8,12 +9,13 @@ import firebase from 'firebase'
 })
 export class PostService {
 
-  constructor() { 
+  constructor(private cookieService: CookieService) { 
     this.getPosts()
   }
 
   posts: Post[] = [];
   postsSubject = new Subject<Post[]>();
+  postCookie: any
 
   createPost: boolean = false;
 
@@ -22,16 +24,19 @@ export class PostService {
   }
 
   savePosts(){
-    firebase.database().ref('/posts').set(this.posts)
+    //firebase.database().ref('/posts').set(this.posts)
+    this.cookieService.set( 'Posts', JSON.stringify(this.posts) );
+    
 
   }
 
   getPosts(){
-    firebase.database().ref('/posts')
+   /* firebase.database().ref('/posts')
       .on('value', (data)=>{
         this.posts = data.val() ? data.val() : [];
         this.emitPost()
-    })
+    })*/
+   this.posts = JSON.parse(this.cookieService.get('Posts'));
   }
 
   createNewPost(newPost: Post){

@@ -67,6 +67,12 @@ svg{
     cursor: grabbing;
 }
 
+.list-placeholder{
+    color: white;
+    text-align: center;
+    padding-top: 11px;
+}
+
 .cdk-drop-list-dragging .cdk-drag {
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
     }

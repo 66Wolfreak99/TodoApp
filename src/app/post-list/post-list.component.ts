@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { Post } from '../models/post.model';
 import { PostService } from '../services/post.service';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-post-list',
@@ -12,11 +13,16 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 })
 export class PostListComponent implements OnInit, OnDestroy {
 
+  cookieValue: string;
   posts:Post[];
   postSubscription: Subscription;
   createPost = this.postService.createPost
 
-  constructor(private postService: PostService, private router: Router) { }
+  constructor(private postService: PostService, private router: Router, private cookieService: CookieService) {
+
+    
+
+   }
 
   drop(event: CdkDragDrop<Post[]>) {
     moveItemInArray(this.posts, event.previousIndex, event.currentIndex);
