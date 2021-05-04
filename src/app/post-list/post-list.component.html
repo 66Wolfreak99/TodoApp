@@ -4,6 +4,10 @@
         <div class="list-group postList">
             
             <div cdkDropList (cdkDropListDropped)="drop($event)">
+                <div class="list-placeholder" style="color: white;" *ngIf='posts?.length < 1'>
+                    <h4>No items in the list</h4>
+                    <p>Start adding some stuff to do!</p>
+                </div>
             <div class="row postItem " *ngFor="let post of posts" cdkDrag>
                 
 
